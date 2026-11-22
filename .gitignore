@@ -1,0 +1,27 @@
+.env
+privado/
+__pycache__/
+.venv/
+*.log
+# modelo hey_jarvis (CC BY-NC-SA, uso pessoal): baixar de novo (docs/INSTALL.md do Groov público)
+hermes/wake/*.tflite
+hermes/wake/sherpa-*/
+.venv-tts/
+.venv-xtts/
+.venv-qwen/
+# voz do dublador do GROOV: uso pessoal, nunca publicar
+hermes/voz/
+# áudio de referência do som de início (WhatsApp; uso pessoal)
+/WhatsApp Audio*
+.venv-conversa/
+hermes/wake/*.onnx
+tests/fixtures/
+tests/fala.wav
+
+# Fase 8: servidor Playwright MCP instalado dentro do projeto
+ferramentas/navegador/node_modules/
+ferramentas/navegador/.npm-cache/
+
+# design system GROOV: os uploads repetem assets/reference
+ROSE HUD Design System/uploads/
+/vault/

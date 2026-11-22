@@ -1,0 +1,9 @@
+{
+  "name": "groov-navegador",
+  "private": true,
+  "version": "0.0.0",
+  "description": "Servidor Playwright MCP (modo extensão) do GROOV, fixo e dentro do projeto",
+  "dependencies": {
+    "@playwright/mcp": "0.0.83"
+  }
+}

@@ -1,0 +1,13 @@
+# Ambiente da conversa em fluxo (.venv-conversa, Python 3.12). Instalar:
+#   py -3.12 -m venv .venv-conversa
+#   .venv-conversa\Scripts\python -m pip install -r requirements-conversa.txt
+# Depois de instalar: pip uninstall -y onnxruntime && pip install onnxruntime-gpu==1.24.4
+# (os dois pacotes ocupam o mesmo módulo; o pipecat puxa o de CPU).
+pipecat-ai[google,kokoro,silero,whisper,webrtc,local-smart-turn,runner]==1.13.0
+google-genai==2.34.0  # licença Apache-2.0 (dist-info); origem PyPI, Google
+nvidia-cublas-cu12
+nvidia-cudnn-cu12>=9,<10
+nvidia-cuda-runtime-cu12
+nvidia-cufft-cu12
+openwakeword
+-r requirements-dev.txt

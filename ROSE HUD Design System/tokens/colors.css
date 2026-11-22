@@ -1,0 +1,104 @@
+/* GROOV HUD — color tokens. Black/gray ground, white text, red as the single main color, rosé for fine detail. */
+:root{
+/* Ink — the black/gray ground */
+--ink-0:#000000;
+--ink-50:#050506;
+--ink-100:#0A0A0C;
+--ink-150:#0F0F12;
+--ink-200:#141418;
+--ink-300:#1C1C21;
+--ink-400:#26262C;
+--ink-500:#34343B;
+--ink-600:#4A4A52;
+--ink-700:#6B6B74;
+--ink-800:#9A9AA3;
+--ink-900:#C9C9D0;
+--white:#F4F4F6;
+--white-pure:#FFFFFF;
+
+/* Red — main color (signal, active, online) */
+--red-50:#FFE5E7;
+--red-100:#FFC2C7;
+--red-200:#FF8A94;
+--red-300:#FF5A67;
+--red-400:#FF3346;
+--red-500:#F01F33;
+--red-600:#C8102A;
+--red-700:#940A1E;
+--red-800:#5E0614;
+--red-900:#2A030A;
+
+/* Rosé — detail color (hairlines, ticks, secondary highlights, the orb's hot rim) */
+--rose-50:#FFF1F4;
+--rose-100:#FBDDE4;
+--rose-200:#F6C1CE;
+--rose-300:#F29AB2;
+--rose-400:#F06C95;
+--rose-500:#EC3F7A;
+--rose-600:#C42660;
+--rose-700:#8C1A45;
+
+/* Alpha helpers */
+--white-a04:rgba(255,255,255,.04);
+--white-a08:rgba(255,255,255,.08);
+--white-a12:rgba(255,255,255,.12);
+--white-a16:rgba(255,255,255,.16);
+--white-a32:rgba(255,255,255,.32);
+--white-a60:rgba(255,255,255,.60);
+--red-a08:rgba(240,31,51,.08);
+--red-a14:rgba(240,31,51,.14);
+--red-a24:rgba(240,31,51,.24);
+--red-a40:rgba(240,31,51,.40);
+--red-a60:rgba(255,51,70,.60);
+--rose-a08:rgba(246,193,206,.08);
+--rose-a16:rgba(246,193,206,.16);
+--rose-a32:rgba(246,193,206,.32);
+--rose-hot-a40:rgba(236,63,122,.40);
+
+/* Semantic — surfaces */
+--bg-page:var(--ink-50);
+--bg-void:var(--ink-0);
+--surface-raised:var(--ink-100);
+--surface-panel:rgba(10,10,12,.78);
+--surface-panel-solid:var(--ink-150);
+--surface-hover:var(--ink-200);
+--surface-active:var(--ink-300);
+--surface-sunken:var(--ink-0);
+--surface-accent:var(--red-500);
+--surface-accent-dim:var(--red-a14);
+--surface-rose-dim:var(--rose-a08);
+--surface-overlay:rgba(0,0,0,.72);
+
+/* Semantic — borders */
+--border-subtle:var(--white-a08);
+--border-default:var(--white-a16);
+--border-strong:var(--white-a32);
+--border-accent:var(--red-500);
+--border-rose:var(--rose-200);
+--border-focus:var(--red-400);
+
+/* Semantic — text */
+--fg-1:var(--white);
+--fg-2:#A3A3AC;
+--fg-3:#6E6E77;
+--fg-disabled:#45454C;
+--fg-accent:var(--red-400);
+--fg-rose:var(--rose-200);
+--fg-on-accent:var(--white-pure);
+
+/* Semantic — accent */
+--accent:var(--red-500);
+--accent-hover:var(--red-400);
+--accent-press:var(--red-600);
+--accent-dim:var(--red-a14);
+--rose:var(--rose-200);
+--rose-hot:var(--rose-500);
+
+/* Semantic — status (kept inside the palette: no greens/blues) */
+--status-online:var(--red-500);
+--status-live:var(--rose-500);
+--status-idle:var(--ink-700);
+--status-ok:var(--white);
+--status-warn:var(--rose-300);
+--status-error:var(--red-400);
+}

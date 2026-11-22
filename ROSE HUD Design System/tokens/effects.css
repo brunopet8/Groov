@@ -1,0 +1,27 @@
+/* GROOV HUD — glows, blur, backgrounds. Light comes from the red, never from drop shadows. */
+:root{
+--glow-red-xs:0 0 4px rgba(255,51,70,.6);
+--glow-red-sm:0 0 8px rgba(255,51,70,.55);
+--glow-red-md:0 0 12px rgba(255,51,70,.5),0 0 32px rgba(240,31,51,.25);
+--glow-red-lg:0 0 20px rgba(255,51,70,.55),0 0 64px rgba(240,31,51,.3);
+--glow-rose-sm:0 0 8px rgba(236,63,122,.5);
+--glow-rose-md:0 0 14px rgba(236,63,122,.45),0 0 40px rgba(236,63,122,.2);
+--glow-white-sm:0 0 8px rgba(255,255,255,.3);
+--glow-inset-red:inset 0 0 24px rgba(240,31,51,.12);
+--text-glow-red:0 0 8px rgba(255,51,70,.75);
+--text-glow-white:0 0 10px rgba(255,255,255,.35);
+
+--blur-panel:10px; /* @kind other */
+--blur-overlay:6px; /* @kind other */
+
+--grad-red-bar:linear-gradient(90deg,var(--red-600),var(--red-400));
+--grad-red-sweep:linear-gradient(90deg,transparent,rgba(255,255,255,.35),transparent); /* @kind other */
+--grad-rose-red:linear-gradient(90deg,var(--rose-400),var(--red-500));
+--grad-core:radial-gradient(circle at center,rgba(240,31,51,.22),transparent 62%); /* @kind other */
+--grad-vignette:radial-gradient(ellipse at center,transparent 45%,rgba(0,0,0,.85) 100%); /* @kind other */
+--grad-fade-bottom:linear-gradient(180deg,transparent,rgba(5,5,6,.95)); /* @kind other */
+
+--bg-grid:linear-gradient(var(--white-a04) 1px,transparent 1px),linear-gradient(90deg,var(--white-a04) 1px,transparent 1px);
+--bg-grid-size:32px 32px; /* @kind other */
+--bg-scanlines:repeating-linear-gradient(0deg,rgba(255,255,255,.025) 0 1px,transparent 1px 3px);
+}

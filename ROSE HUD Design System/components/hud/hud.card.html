@@ -1,0 +1,38 @@
+<!-- @dsCard group="Components" viewport="700x320" name="HUD" subtitle="Reticle · Stat · BarChart · VoiceBars" -->
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<style>body{margin:0;padding:18px 22px;background:var(--bg-page);overflow:hidden}.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.k{font:var(--type-micro);letter-spacing:var(--tracking-wider);color:var(--fg-3);width:72px;flex:none;text-transform:uppercase}.stack{display:flex;flex-direction:column;gap:14px}</style></head><body><div id="root"></div>
+<script type="text/babel">
+const NSX = window.ROSEHUDDesignSystem_bed3b4;
+const { Reticle, Stat, BarChart, VoiceBars } = NSX;
+function App(){
+  const [view,setView]=React.useState('3d');
+  return (<div style={{display:'grid',gridTemplateColumns:'240px 1fr',gap:24,alignItems:'center'}}>
+    <div style={{position:'relative'}} onClick={()=>setView(v=>v==='3d'?'2d':'3d')}>
+    <span style={{position:'absolute',top:0,left:0,zIndex:2,font:'var(--type-micro)',letterSpacing:'var(--tracking-wider)',color:'var(--fg-3)',cursor:'pointer'}}>VIEW {view.toUpperCase()} · CLICK</span>
+    <Reticle size={240} state="online" view={view} ringText="GROOV // CORE 01 // ONLINE">
+      <div style={{display:'flex',flexDirection:'column',alignItems:'center',gap:4}}><span style={{font:'var(--type-display)',fontSize:'var(--fs-xl)',letterSpacing:'.06em',textShadow:'var(--text-glow-white)'}}>GROOV</span><span style={{font:'var(--type-micro)',letterSpacing:'var(--tracking-widest)',color:'var(--red-400)'}}>ONLINE</span></div>
+    </Reticle>
+    </div>
+    <div className="stack" style={{gap:18}}>
+      <div className="row" style={{gap:28,alignItems:'flex-start'}}>
+        <Stat label="Quest headsets sold" prefix="≈" value={20} suffix="m" />
+        <Stat label="Uptime" value={72} suffix="h" size="sm" />
+        <Stat label="Load" value={87} suffix="%" size="sm" tone="red" />
+      </div>
+      <BarChart height={64} data={[{label:'Q1',value:12},{label:'Q2',value:4},{label:'Q3',value:9},{label:'Q4',value:20},{label:'Q5',value:6},{label:'Q6',value:3}]} />
+      <div className="row" style={{gap:18}}>
+        <Reticle size={56} state="listening" tone="rose" ticks={false} />
+        <Reticle size={56} state="thinking" view="3d" ticks={false} />
+        <Reticle size={56} state="off" ticks={false} />
+        <VoiceBars />
+        <VoiceBars active={false} count={12} />
+      </div>
+    </div>
+  </div>);
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+</script></body></html>

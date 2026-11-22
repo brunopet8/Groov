@@ -1,0 +1,24 @@
+<!-- @dsCard group="Components" viewport="700x260" name="Core" subtitle="Button · IconButton · Tag · Badge · Tooltip · Icon" -->
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<style>body{margin:0;padding:18px 22px;background:var(--bg-page);overflow:hidden}.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.k{font:var(--type-micro);letter-spacing:var(--tracking-wider);color:var(--fg-3);width:72px;flex:none;text-transform:uppercase}.stack{display:flex;flex-direction:column;gap:14px}</style></head><body><div id="root"></div>
+<script type="text/babel">
+const NSX = window.ROSEHUDDesignSystem_bed3b4;
+const { Button, IconButton, Tag, Badge, Tooltip, Icon } = NSX;
+function App(){
+  const [sel,setSel]=React.useState('HISTORY');
+  const [mic,setMic]=React.useState(true);
+  return (<div className="stack">
+    <div className="row"><span className="k">Button</span><Button icon="play">Proceed</Button><Button variant="secondary">Clear text</Button><Button variant="ghost" iconRight="arrow-up-right">Open source</Button><Button variant="rose" icon="pin">Pin</Button><Button disabled>Disabled</Button></div>
+    <div className="row"><span className="k">Sizes</span><Button size="sm">Small</Button><Button size="md">Medium</Button><Button size="lg">Large</Button><Button size="sm" variant="secondary">Small</Button><Button size="lg" variant="secondary" icon="mic">Talk</Button></div>
+    <div className="row"><span className="k">IconButton</span><IconButton icon="x" label="Close" size="sm" /><IconButton icon="history" label="History" /><IconButton icon="mic" label="Mic" variant="outline" active={mic} onClick={()=>setMic(!mic)} /><IconButton icon="camera" label="Camera" variant="outline" /><Tooltip content="Send"><IconButton icon="send" label="Send" variant="solid" /></Tooltip><IconButton icon="settings" label="Settings" size="lg" /></div>
+    <div className="row"><span className="k">Tag</span>{['HISTORY','TEXT','CLEAR TEXT','CAMERA'].map(t=><Tag key={t} selected={sel===t} onClick={()=>setSel(t)}>{t}</Tag>)}<Tag icon="tag" onRemove={()=>{}}>Meta Quest</Tag></div>
+    <div className="row"><span className="k">Badge</span><Badge>27.15.0</Badge><Badge tone="red" dot>Live</Badge><Badge tone="rose" variant="outline">Source</Badge><Badge tone="red" variant="solid">3</Badge><Badge tone="white">#A-112</Badge></div>
+    <div className="row"><span className="k">Icon</span>{['x','play','pause','mic','camera','search','activity','cpu','radio','image'].map(n=><span key={n} style={{color:'var(--fg-2)'}}><Icon name={n} size={14} /></span>)}</div>
+  </div>);
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+</script></body></html>

@@ -1,0 +1,4 @@
+html, body, #raiz { height: 100%; margin: 0; overflow: hidden; }
+.groov-raiz { position: absolute; inset: 0; overflow: hidden; background: var(--bg-page); }
+/* A pilha do canto manda na posição: o cartão de pergunta (position absolute em entrada.js) entra no fluxo dela. */
+.groov-pilha > * { position: static !important; }

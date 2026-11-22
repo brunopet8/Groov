@@ -1,0 +1,12 @@
+# Ambiente do servidor de voz com Qwen3-TTS (.venv-qwen, Python 3.12). Instalar:
+#   uv venv --python 3.12 .venv-qwen
+#   uv pip install -p .venv-qwen\Scripts\python.exe -r requirements-qwen.txt
+# Pesos (uma vez, com rede; depois o servidor roda offline). Os 2,5 GB vêm do Hugging Face, nada seu sai:
+#   .venv-qwen\Scripts\python -c "from huggingface_hub import snapshot_download as s; s('Qwen/Qwen3-TTS-12Hz-0.6B-Base', revision='5d83992436eae1d760afd27aff78a71d676296fc')"
+# Voz: hermes/voz/ref_qwen.wav (~7 s) + ref_qwen.txt (a transcrição exata do áudio).
+# faster-qwen3-tts 0.5.4 (MIT) e qwen-tts-hf 0.1.1.post1 (Apache-2.0), lidos em 28/10/2026.
+--extra-index-url https://download.pytorch.org/whl/cu124
+torch==2.6.0+cu124
+torchaudio==2.6.0+cu124
+faster-qwen3-tts==0.5.4
+transformers==5.15.1  # a 5.21 quebra o tokenizador do Qwen3-TTS (propriedade 'upsample' sem setter)
